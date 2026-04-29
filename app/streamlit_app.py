@@ -45,11 +45,11 @@ with st.sidebar:
     st.write("Ce simulateur évalue la probabilité de défaut de paiement pour une demande de crédit bancaire.")
 
 # --- TITRE PRINCIPAL ---
-st.title("💳 Scoring de Crédit — Risque Bancaire")
+st.title("Scoring de Crédit — Risque Bancaire")
 st.markdown("---")
 
 # --- ONGLETS ---
-onglet1, onglet2, onglet3 = st.tabs(["📊 Panorama des Crédits", "🔍 Analyse du Risque", "🤖 Simulateur de Crédit"])
+onglet1, onglet2, onglet3 = st.tabs(["Panorama des Crédits", "Analyse du Risque", "Simulateur de Crédit"])
 
 # --- ONGLET 1 : PANORAMA DES CRÉDITS ---
 with onglet1:
@@ -85,7 +85,7 @@ with onglet2:
                  color='Importance', color_continuous_scale='Blues')
     st.plotly_chart(fig2, use_container_width=True)
     
-    st.info("💡 L'ancienneté professionnelle, l'âge et les sources de données externes sont les indicateurs de risque majeurs.")
+    st.info("L'ancienneté professionnelle, l'âge et les sources de données externes sont les indicateurs de risque majeurs.")
 
 # --- ONGLET 3 : SIMULATEUR DE CRÉDIT ---
 with onglet3:
@@ -134,13 +134,13 @@ with onglet3:
             st.progress(proba_defaut)
             
             if proba_defaut < 0.35:
-                st.success("### ✅ AVIS FAVORABLE")
+                st.success("### AVIS FAVORABLE")
                 st.write("Le risque est jugé acceptable pour l'octroi du crédit.")
             elif proba_defaut < 0.60:
-                st.warning("### ⚠️ DOSSIER À ÉTUDIER")
+                st.warning("### DOSSIER À ÉTUDIER")
                 st.write("Le profil présente des risques modérés. Des garanties supplémentaires peuvent être requises.")
             else:
-                st.error("### ❌ AVIS DÉFAVORABLE")
+                st.error("### AVIS DÉFAVORABLE")
                 st.write("Le risque de défaut est trop élevé pour ce profil.")
 
 # --- FOOTER ---
